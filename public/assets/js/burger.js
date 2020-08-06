@@ -14,7 +14,7 @@ $(function() {
       data: newDevouredState
     }).then(
       function() {
-        console.log("changed burger to", newDevoured);
+        // console.log("changed burger to", newDevoured);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -28,9 +28,12 @@ $(function() {
     var newBurger = {
       burger_name: $("#ca").val().trim(),
       devoured: $("[name=devoured]:checked").val().trim()
+      // devoured: $("[name=devoured]:checked").val(false)
 
     };
     console.log(newBurger)
+    console.log(newBurger.burger_name);
+    console.log(newBurger.devoured);
 
     // Send the POST request.
     $.ajax("/api/burgers", {
@@ -38,9 +41,9 @@ $(function() {
       data: newBurger
     }).then(
       function() {
-        console.log("created new burger");
+        // console.log("created new burger");
         // Reload the page to get the updated list
-        location.reload();
+         location.reload();
       }
     );
   });
