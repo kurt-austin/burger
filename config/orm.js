@@ -1,44 +1,4 @@
 // Import MySQL connection.
-// const connection = require("../config/connection.js");
-
-
-// const orm = {
-//     selectAll: function(tableInput) {
-//       var queryString = "SELECT * FROM ??";
-//       connection.query(queryString, [tableInput], function(err, result) {
-//         if (err) throw err;
-//         console.log(result);
-//       });
-//     },
-//     insertOne: function(tableInput, colname1, colname2, valcol1, valcol2) {
-//       var queryString = "INSERT INTO ?? (??) VALUES (?)";
-//       console.log(queryString);
-//       connection.query(queryString, [tableInput, colname1, colname2, valcol1,valcol2], function(err, result) {
-//         if (err) throw err;
-//         console.log(result);
-//       });
-//     },
-//     updateOne: function(tableInput, colname1, valcol1, colname2, valcol2) {
-//       var queryString =
-//         "UPDATE ?? SET ?? = ?? WHERE ?? = ??";
-  
-//       connection.query(
-//         queryString,
-//         [tableInput, colname1, valcol1, colname2, valcol2],
-//         function(err, result) {
-//           if (err) throw err;
-//           console.log(result);
-//         }
-//       );
-//     }
-//   };
-  
-//   module.exports = orm;
-
-
-
-
-  // Import MySQL connection.
 const connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
@@ -100,7 +60,6 @@ var orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    // console.log(queryString);
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
@@ -119,7 +78,6 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    // console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -131,7 +89,6 @@ var orm = {
  
 };
 
-// Export the orm object for the model (cat.js).
 module.exports = orm;
 
   

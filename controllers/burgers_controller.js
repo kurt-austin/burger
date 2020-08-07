@@ -2,21 +2,15 @@ const express = require('express')
 // const burgerFile = require('./../models/burger.js')
 
 
-const app = express()
-const PORT = process.env.PORT || 3000
+// const app = express()
+// const PORT = process.env.PORT || 3000
 
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.static('public'))
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
 var router = express.Router();
 
-
-
-
-// var express = require("express");
-
-// var router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
 var burger = require("./../models/burger.js");
@@ -38,7 +32,7 @@ router.post("/api/burgers", function(req, res) {
   ], [
     req.body.burger_name, req.body.devoured
   ], function(result) {
-    // Send back the ID of the new quote
+
     res.json({ id: result.insertId });
   });
 });

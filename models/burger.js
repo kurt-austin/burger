@@ -1,19 +1,8 @@
-const orm = require("../config/orm.js");
-
-
-// orm.selectAll("burgers");
-
-// orm.insertOne("burgers", "burger_name","devoured","Big Mac", "True");
-
-
-// orm.updateOne("burgers", "devoured", "false", "Big Mac");
-
-
-
-
 
 // Import the ORM to create functions that will interact with the database.
-// var orm = require("../config/orm.js");
+
+const orm = require("../config/orm.js");
+
 
 const burger = {
   selectAll: function(cb) {
@@ -36,17 +25,6 @@ const burger = {
 };
 
 // Export the database functions for the controller (catsController.js).
-// module.exports = cat;
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = burger;
